@@ -3,10 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=å, initial-scale=1.0">
     <title>Boolzapp</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script></head>
+    <script src="js/script.js" defer></script>
 <body>
-    
+    <div class="sfondo"></div>
+    <div id="root" v-cloak>
+        <div class="container">
+            <div class="contactlist">
+                <div class="me">
+                    <div class="me-left">
+                        <img src="img/avatar_8.jpg" alt="">
+                        <h2 class="me-name">Giovanni</h2>    
+                    </div>
+                    <div class="me-right">
+                        <button class="me-button"><i class="fa fa-circle-o-notch"></i></button>
+                        <button class="me-button"><i class="fa fa-comment"></i></button>
+                        <button class="me-button"><i class="fa fa-ellipsis-v"></i></button>    
+                    </div>
+                </div>
+                <div class="notifiche">
+                    <div class="icon">
+                        <i class="fa fa-bell-slash"></i>
+                    </div>
+                    <div class="testo">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <p class="sottotesto">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+                <div class="search">
+                    <button class="search-button"><i class="fa fa-search"></i></button>
+                    <input type="text" class="search-bar" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div class="contatti" v-for="(contact, i) in contacts">
+                    <div class="contatti_left">
+                        <img :src="contact.avatar" alt="" class="immagine_contatti">
+                        <div class="testo_contatti">
+                            <p>{{ contact.name }}</p>
+                            <p class="ultimo_messaggio"> {{ contact.messages[contact.messages.length - 1].message }} </p>
+                        </div>    
+                    </div>
+                    <span class="ultimo_messaggio_time">16:00</span>
+                </div>
+            </div>
+            <div class="chat">
+                
+            </div>
+        </div>    
+    </div>
 </body>
 </html>

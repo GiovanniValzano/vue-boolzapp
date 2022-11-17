@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.sfondo {
+    background-color: #128c7e;
+    height: 15vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 1100px;
+    height: 90vh;
+    margin: 5vh auto;
+    display: flex;
+}
+
+.contactlist {
+    height: 100%;
+    width: 35%;
+    background-color: white;
+    border-right: 1px solid lightgray;
+}
+
+.chat {
+    height: 100%;
+    width: 65%;
+    background-image: url(/Users/mariasofia/Desktop/Esercizi/vue-boolzapp/img/mine.jpg);
+}
+
+.me {
+    display: flex;
+    background-color: #ece5dd;
+    height: 55px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.me-left {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.me-left .me-name {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.me img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.me-right button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-right: 10px;
+    color: grey;
+    transition: .2s;
+}
+
+.me-right button:hover {
+    cursor: pointer;
+    color: black;
+}
+.notifiche {
+    height: 55px;
+    background-color: #9ed6ee;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    column-gap: 10px;
+}
+
+.notifiche .icon {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    color: #9ed6ee;
+}
+
+.notifiche .testo {
+    font-size: 12px;
+}
+
+.notifiche .testo .sottotesto {
+    color: rgb(131, 131, 131);
+    text-decoration: underline;
+    transition: .2s;
+}
+
+.notifiche .testo .sottotesto:hover {
+    cursor: pointer;
+    color: rgb(26, 26, 26);
+}
+
+.contatti {
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid lightgray;
+    transition: .2s;
+}
+
+.contatti:hover {
+    cursor: pointer;
+    background-color: #ece5dd;
+}
+
+.immagine_contatti {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.ultimo_messaggio {
+    font-size: 12px;
+    color: grey;
+}
+
+.contatti_left {
+    display: flex; 
+    align-items: center;
+    column-gap: 10px;
+}
+
+.ultimo_messaggio_time {
+    align-self: baseline;
+    margin-top: 8px;
+    font-size: 10px;
+    color: grey;
+}
+
+.search {
+    height: 35px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #ece5dd;
+}
+
+.search-bar {
+    height: 26px;
+    width: 80%;
+    border-radius: 0;
+    border: 0.1px solid lightgray;
+    padding: 0 10px;
+}
+
+.search-button {
+    height: 26px;
+    width: 20%;
+    border-radius: 0;
+    border: 0.1px solid lightgray;
+    background-color: white;
+    color: grey;
+    transition: .2s;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
