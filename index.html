@@ -42,7 +42,7 @@
                     <button class="search-button"><i class="fa fa-search"></i></button>
                     <input type="text" class="search-bar" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <div class="contatti" v-for="(contact, i) in contacts">
+                <div class="contatti" v-for="(contact, i) in contacts" @click="selectedChat(i)">
                     <div class="contatti_left">
                         <img :src="contact.avatar" alt="" class="immagine_contatti">
                         <div class="testo_contatti">
@@ -54,7 +54,27 @@
                 </div>
             </div>
             <div class="chat">
-                
+                <div class="chatUser">
+                    <div class="contatti_left">
+                        <img :src="contacts[currentChat].avatar" alt="" class="immagine_contatti">
+                        <div class="testo_contatti">
+                            <p>{{ contacts[currentChat].name }}</p>
+                            <p class="ultimo_accesso">Ciao</p>
+                        </div>    
+                    </div>
+                    <div class="me-right">
+                        <button class="me-button"><i class="fa fa-search"></i></button>
+                        <button class="me-button"><i class="fa fa-paperclip"></i></button>
+                        <button class="me-button"><i class="fa fa-ellipsis-v"></i></button>    
+                    </div>
+                </div>
+                <div class="mainchat">
+                    <div class="ricevuto" v-for="(msg, i) in contacts[currentChat].messages" :class="{mandato: msg.status === 'sent', ricevuto: msg.status === 'received'}">
+                        <div class="testomessaggio">
+                            <p>{{ msg.message }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>    
     </div>
