@@ -36,6 +36,9 @@ body {
     height: 100%;
     width: 65%;
     background-image: url(/Users/mariasofia/Desktop/Esercizi/vue-boolzapp/img/mine.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .me {
@@ -220,4 +223,32 @@ body {
     background-color: #dcf8c6;
     border-radius: 5px;
     padding: 5px 10px;
+}
+
+.writeMessages {
+    width: 100%;
+    height: 50px;
+    background-color: #ece5dd;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.writeSpace {
+    width: 70%;
+    border: none;
+    height: 30px;
+    padding: 0 15px;
+    border-radius: 50px;
+}
+
+.writeIcon {
+    font-size: 22px;
+    color: grey;
+    transition: .2s;
+}
+
+.writeIcon:hover {
+    cursor: pointer;
+    color: black;
 }

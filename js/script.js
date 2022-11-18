@@ -108,10 +108,32 @@ const app = new Vue({
             }
         ],
         currentChat: 0,
+        newMsg: '',
     },
     methods: {
         selectedChat(index){
             this.currentChat = index;
+        },
+        sendMsg(){
+            if(this.newMsg.trim()) {
+                let newObjMsg = {
+                    date: 'ciao',
+                    message: this.newMsg.trim(),
+                    status: 'sent',
+                }
+                this.contacts[this.currentChat].messages.push(newObjMsg);
+                this.newMsg = '';
+
+                setTimeout(this.receiveMsg, 2000);
+            }
+        },
+        receiveMsg(){
+            let newObjMsg = {
+                date: 'ciao',
+                message: 'Ok',
+                status: 'received',
+            }
+            this.contacts[this.currentChat].messages.push(newObjMsg);
         },
     }
 });
