@@ -47,7 +47,7 @@
                         <img :src="contact.avatar" alt="" class="immagine_contatti">
                         <div class="testo_contatti">
                             <p>{{ contact.name }}</p>
-                            <p class="ultimo_messaggio"> {{ contact.messages[contact.messages.length - 1].message }} </p>
+                            <p class="ultimo_messaggio" v-if="contact.messages.length != 0"> {{ contact.messages[contact.messages.length - 1].message }} </p>
                         </div>    
                     </div>
                     <span class="ultimo_messaggio_time">16:00</span>
@@ -60,7 +60,7 @@
                             <img :src="contacts[currentChat].avatar" alt="" class="immagine_contatti">
                             <div class="testo_contatti">
                                 <p>{{ contacts[currentChat].name }}</p>
-                                <p class="ultimo_accesso">Ciao</p>
+                                <p class="ultimo_accesso">Online</p>
                             </div>    
                         </div>
                         <div class="me-right">
@@ -70,9 +70,18 @@
                         </div>
                     </div>
                     <div class="mainchat">
-                        <div class="ricevuto" v-for="(msg, i) in contacts[currentChat].messages" :class="{mandato: msg.status === 'sent', ricevuto: msg.status === 'received'}">
+                        <div class="ricevuto" v-for="(msg, i) in contacts[currentChat].messages" :class="{mandato: msg.status === 'sent', ricevuto: msg.status === 'received'}" :keys="msg.message">
                             <div class="testomessaggio">
                                 <p>{{ msg.message }}</p>
+                                <div class="frecciamenu" @click="openMenu(i)">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="menucontainer" :class="{menumandato: msg.status === 'sent', menuricevuto: msg.status === 'received',aperto: msg.menu}">
+                                <ul>
+                                    <li>Info</li>
+                                    <li @click="deleteMsg(i)">Elimina messaggio</li>
+                                </ul>
                             </div>
                         </div>
                     </div>    
