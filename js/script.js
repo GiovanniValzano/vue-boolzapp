@@ -109,6 +109,7 @@ const app = new Vue({
         ],
         currentChat: 0,
         newMsg: '',
+        research: '',
     },
     methods: {
         selectedChat(index){
@@ -124,7 +125,7 @@ const app = new Vue({
                 this.contacts[this.currentChat].messages.push(newObjMsg);
                 this.newMsg = '';
 
-                setTimeout(this.receiveMsg, 2000);
+                setTimeout(this.receiveMsg, 1000);
             }
         },
         receiveMsg(){
@@ -134,6 +135,16 @@ const app = new Vue({
                 status: 'received',
             }
             this.contacts[this.currentChat].messages.push(newObjMsg);
+        },
+        searchContact(){
+            for(let i=0; i<this.contacts.length; i++){
+                if(this.contacts[i].name.toLowerCase().includes(this.research.toLowerCase())){
+                    this.contacts[i].visible = true
+                }
+                else{
+                    this.contacts[i].visible = false
+                }
+            }
         },
     }
 });

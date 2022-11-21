@@ -39,10 +39,10 @@
                     </div>
                 </div>
                 <div class="search">
-                    <button class="search-button"><i class="fa fa-search"></i></button>
-                    <input type="text" class="search-bar" placeholder="Cerca o inizia una nuova chat">
+                    <button class="search-button" @click="searchContact"><i class="fa fa-search"></i></button>
+                    <input type="text" class="search-bar" placeholder="Cerca o inizia una nuova chat" v-model="research" @keyup="searchContact">
                 </div>
-                <div class="contatti" v-for="(contact, i) in contacts" @click="selectedChat(i)">
+                <div class="contatti" v-for="(contact, i) in contacts" :class="{visible: contact.visible}" @click="selectedChat(i)">
                     <div class="contatti_left">
                         <img :src="contact.avatar" alt="" class="immagine_contatti">
                         <div class="testo_contatti">

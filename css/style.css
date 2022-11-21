@@ -112,7 +112,7 @@ body {
 
 .contatti {
     height: 55px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
@@ -251,4 +251,8 @@ body {
 .writeIcon:hover {
     cursor: pointer;
     color: black;
+}
+
+.visible{
+    display: flex;
 }
