@@ -30,6 +30,7 @@ body {
     width: 35%;
     background-color: white;
     border-right: 1px solid lightgray;
+    overflow: auto;
 }
 
 .chat {
@@ -39,6 +40,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    overflow-y: auto;
 }
 
 .me {
@@ -204,12 +207,15 @@ body {
     display: flex;
     margin-left: 30px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .ricevuto .testomessaggio {
     background-color: white;
     border-radius: 5px;
     padding: 5px 10px;
+    display: flex;
+    column-gap: 10px;
 }
 
 .mandato {
@@ -255,4 +261,50 @@ body {
 
 .visible{
     display: flex;
+}
+
+.frecciamenu {
+    font-size: 10px;
+}
+
+.frecciamenu:hover {
+    cursor: pointer;
+}
+
+.menucontainer {
+    background-color: white;
+    padding: 5px;
+    color: grey;
+    font-size: 14px;
+    position: absolute;
+    z-index: 30;
+    visibility: hidden;
+    border-radius: 5px;
+}
+
+.menucontainer li {
+    transition: color .2s;
+}
+
+.menucontainer li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.menumandato {
+    top: 32px;
+    right: 10px;
+}
+
+.menuricevuto {
+    top: 32px;
+    left: 20px;
+}
+
+.menucontainer ul {
+    list-style: none;
+}
+
+.aperto {
+    visibility: visible;
 }

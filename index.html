@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="mainchat">
-                        <div class="ricevuto" v-for="(msg, i) in contacts[currentChat].messages" :class="{mandato: msg.status === 'sent', ricevuto: msg.status === 'received'}" :keys="msg.message">
+                        <div class="ricevuto" v-for="(msg, i) in contacts[currentChat].messages" :class="{mandato: msg.status === 'sent', ricevuto: msg.status === 'received'}">
                             <div class="testomessaggio">
                                 <p>{{ msg.message }}</p>
                                 <div class="frecciamenu" @click="openMenu(i)">
@@ -94,7 +94,7 @@
                     <div class="writeIcon">
                         <i class="fa fa-microphone"></i>
                     </div>
-                </div>
+
             </div>
         </div>    
     </div>
